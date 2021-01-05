@@ -11,7 +11,23 @@
 |
 */
 
+
+
 Route::get('/','HomePageController@index');
 Route::get('/listing','ListingPageController@index');
 Route::get('/details','DetailsPageController@index');
+
+Route::group(['prefix'=>'back'],function(){
+
+    //index
+    
+    Route::get('/','Admin\DashboardController@index');
+
+    // Category
+
+    Route::get('/category','Admin\categoryController@index');
+    Route::get('/category/create','Admin\categoryController@create');
+    Route::get('/category/edit','Admin\categoryController@edit');
+    
+});
 
