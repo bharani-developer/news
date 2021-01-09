@@ -38,7 +38,7 @@
 
                         <div class="card-header">
                             <strong class="card-title">{{ $page_name }}</strong>
-    {{--   @permission(['Post Add','All'])    @endpermission --}}          
+      @permission(['Post Add','All'])    @endpermission          
  <a href="{{ url('/back/permission/create') }}" class="btn btn-primary pull-right">Create</a>           
 
                         </div>
@@ -62,14 +62,14 @@
                         <td>{{ $row->display_name }}</td>
                         <td>{{ $row->description }}</td>
                         <td>
-                         {{--  @permission(['Post Add','All','Post Update'])  --}}
+                          @permission(['Post Add','All','Post Update']) 
            <a href="{{ url('/back/permission/edit/'.$row->id) }} " class="btn btn-primary">Edit</a>
-          {{--  @endpermission
-           @permission(['Post Add','All'])  --}}
+           @endpermission
+           @permission(['Post Add','All']) 
            {{ Form::open(['method'=>'DELETE','url'=>['/back/permission/delete/'.$row->id],'style'=>'display:inline' ]) }}
            {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
            {{ Form::close() }}
-        {{--    @endpermission --}}
+           @endpermission
 
                          </td>
 
